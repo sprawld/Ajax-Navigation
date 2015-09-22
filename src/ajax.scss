@@ -1,0 +1,57 @@
+main {
+	position:fixed;box-sizing:border-box;
+	top:50px;left:0;width:100%;bottom:0;overflow-y:scroll;overflow-x:hidden;
+	transition:opacity 0.5s, top 0.5s, left 0.5s, padding-top 0.5s;
+	font-family:serif;padding:0 3%;
+	opacity:1;
+	&.hide {opacity:0;}
+	&.left {left:-50px;opacity:0;}
+	&.right {left:50px;opacity:0;}
+	
+	
+	h1,h2,h3,h4,h5,h6 {font-weight:normal;}
+	article {padding:0 15px;max-width:1000px;margin:auto;}
+	
+	&.error {
+		z-index:50;
+		&:after {
+			content: "Page Not Found";
+			position:absolute;
+			top:50%;left:50%;transform:translate(-50%,-50%);
+		}
+	}
+}
+	
+nav.scroll ~ main {
+	top:0;
+	padding-top:50px;
+}
+
+nav {
+	font-family:sans-serif;
+	position:fixed;top:0;left:0;height:50px;width:100%;
+	background:rgb(41, 128, 185);
+	ul {padding:0;margin:0;
+		li {
+			transition:all 0.5s;
+			display:inline-block;font-size:24px;
+			padding:10px;height:30px;background:rgb(52, 152, 219);
+			&:hover {background:rgb(41, 128, 185);}
+			a {
+			transition:all 0.5s;
+				padding:10px;
+				text-decoration:none;
+				color:white;//rgb(231, 76, 60);
+				&:hover {
+					color:white;//rgb(192, 57, 43);
+				}
+			}
+			&.active {
+				background:white;
+				a {
+					color:rgb(231, 76, 60);
+				}
+			}
+		}
+	}
+}
